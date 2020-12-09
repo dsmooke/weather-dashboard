@@ -16,7 +16,37 @@ var APIKey = "f6f7a3dff7fc0e302488452daa7283c8"
 
 
 
+function searchCity(city){
 
+var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
+
+console.log(queryURL);
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+
+.then(function(response) {
+
+    console.log(queryURL);
+
+    console.log(response);
+
+    // Transfer content to HTML aka display function
+    $(".city").html("<h2>" + response.city.name + "</h2>");
+    
+    $(".wind").text("Wind: " + response.list[0].wind.speed);
+    
+    response.list.forEach(
+        item => {
+            if(item.dt_txt.includes("12:00")) {
+                console.log(item.dt);
+            }
+
+        } 
+    )
+   
     // // Log the data in the console as well
     // console.log("Wind Speed: " + response.main.windSpeed);
     // console.log("Humidity: " + response.main.humidity);
