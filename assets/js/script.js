@@ -57,7 +57,14 @@ function searchCity(city){
         $(".tempF").text("Temperature: " + tempF.toFixed(2) + "F");
         $(".tempF").html("Temperature: " + tempF.toFixed(2) + " <span>&#8457;</span>");
 
-    function getLongLat(city) {
+        // longitude and latitude
+        var lon = response.city.coord.lon;
+        var lat = response.city.coord.lat;
+            console.log(lat, lon);
+        
+
+    function uvIndex(city) {
+       
         uvURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKey}`
 
          console.log("uv-index API " + uvURL);
@@ -72,24 +79,17 @@ function searchCity(city){
             console.log(uvURL);
     
             // Log the resulting object
-            console.log(response);
+            console.log(response.value);
+            
 
-            var lon = response.city.coord[1];
-            var lat = response.city.coord[0];
-            console.log(lon, lat);
+            $(".uv-index").text("UV Index: " +  response.value)
             
             
             })
-
-
-
-                                   
-                                
-                                
-                                
+                // uvIndex = response;
                                 }
-    $(".uv-index").text("UV Index: " + response)
-    getLongLat();
+    
+    uvIndex();
 
 
         
@@ -101,7 +101,7 @@ function searchCity(city){
         console.log("Temperature (F): " + tempF.toFixed(2));
         console.log("Humidity: " + response.list[0].main.humidity);
         console.log("Wind Speed: " + response.list[0].wind.speed);
-        
+        console.log("UV Index: " + response.value);
         
 
         // response.city.list[array of objects with dt date code]
