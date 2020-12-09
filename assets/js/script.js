@@ -84,10 +84,21 @@ function searchCity(city){
 
             $(".uv-index").text("UV Index: " +  response.value)
             
+            var uv = response.value;
+            console.log(uv);
+
+            // color coordinating based on index
+            if (uv <= 2) {
+                $(".uv-index").html("UV Index: " + "<span class='badge-success'>" +  + uv + "</span>") 
+                
+            } else if (uv <= 7){
+                $(".uv-index").attr("class", "high-uv") 
+            } else {$(".uv-index").attr("class", "bad-uv") 
+            }
             
             })
                 // uvIndex = response;
-                                }
+        }
     
     uvIndex();
 
