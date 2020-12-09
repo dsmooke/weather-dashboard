@@ -7,6 +7,9 @@ body {
     padding-top: 20px;
 }
 
+.col-5 {
+    width: 60%;
+}
 .list-group {
    padding-top: 20px;
 }    
