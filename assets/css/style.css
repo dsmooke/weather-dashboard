@@ -1,17 +1,48 @@
-
+* {
+    box-sizing: border-box;
+}
 body {
-    background-color: rgb(141, 217, 247);
+    width: 100%;
+    
+   
 }
 
+.container {
+    padding: 0px;
+    margin-right: 10px;
+    margin-left:0px;
+    
+}
+
+h1 {
+    position: relative;
+    padding: 50px;
+    text-align: center;
+    background-color: black;
+    
+    color: white;
+    margin:
+}
+/* main forecast display box*/
 .row {
-    padding-top: 20px;
+    padding: 20px;
 }
 
+#city-list {
+    position: absolute;
+}
+/* #main-forecast {
+} */
+
+#currentDay {
+    display: inline-flex;
+}
 .col-5 {
     width: 60%;
 }
 .list-group {
    padding-top: 20px;
+   position: relative;
 }    
 
 
@@ -25,4 +56,6 @@ body {
   
 }
 
-
+#main-forecast {
+    line-height: 35px;;
+}
