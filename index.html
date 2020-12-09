@@ -19,14 +19,28 @@
 
 </head>
 <body>
-
-    <div class="container">
-        <h1>Weather Dashboard</h1>
-       
-            
+  <h1>Weather Dashboard</h1>
+    <div class="container-flex">
         
 
-        <div class="row card" id="main-forecast">
+        <section class="row">
+            <section calss="col-lg-3 mt-4">
+                <h4 class="searchBox">Search for a City:</h4>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="search" class="form-control" id="userInput" placeholder="City Name"><button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </section>
+        </section>
+       
+
+
+
+
+
+        <!--Main City Forecast Display-->
+        <div class="row card flex-wrap" id="main-forecast">
             <div class="col-2"></div>
             <div class="city"></div>
             <div id="currentDay"></div>
@@ -41,16 +55,17 @@
 
 
 
-    <div class="row" id="city-list">
-      <div class="col-5">Search for a City:
+    <!-- <div class="row d-flex flex-wrap justify-content" id="city-list">
+      
+          <h4>Search for a City:</h4>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" >
             
           <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
         </form>
-        
-        
-        <ul class="list-group">
+         -->
+<!-- 
+        <ul class="row list-group" id="saved-cities">
           <li class="list-group-item">Atlanta</li>
           <li class="list-group-item">Chicago</li>
           <li class="list-group-item">Denver</li>
@@ -58,9 +73,9 @@
           <li class="list-group-item">New York</li>
           <li class="list-group-item">Dallas</li>
           <li class="list-group-item">Miami</li>
-        </ul>
+        </ul> -->
 
-      </div> <!--end of col-5-->
+  
     </div> <!--end of row class-->
 
 </div> <!--end of container-->
