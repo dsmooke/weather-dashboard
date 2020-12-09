@@ -2,6 +2,9 @@
 var time = moment();
 console.log(time);
 
+
+
+
 var currentHeaderDate = moment().format("l");
 
 
@@ -36,18 +39,16 @@ function searchCity(city){
         // Log the resulting object
         console.log(response);
 
-        // get today's date and display it
         
-        // Transfer content to HTML aka display function
+        
+        // Transfer content to HTML aka display function and get today's date and display it
         $(".city").html("<h2>" + response.city.name + " (" + currentHeaderDate + ")" + "</h2>");
-        
         
         $(".wind").text("Wind Speed: " + response.list[0].wind.speed + " MPH");
 
         $(".humidity").text("Humidity: " + response.list[0].main.humidity + " %");
 
         // Convert the temp to fahrenheit
-        
         var tempF = (response.list[0].main.temp - 273.15) * 1.80 + 32;
 
         $(".temp").text("Temperature: " + response.list[0].main.temp + " K");
@@ -55,7 +56,46 @@ function searchCity(city){
 
         $(".tempF").text("Temperature: " + tempF.toFixed(2) + "F");
         $(".tempF").html("Temperature: " + tempF.toFixed(2) + " <span>&#8457;</span>");
-        // $(".uv-index").text("UV Index: " + )
+
+    function getLongLat(city) {
+        uvURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKey}`
+
+         console.log("uv-index API " + uvURL);
+
+         $.ajax({
+            url: uvURL,
+            method: "GET"
+        })
+            .then(function(response) {
+
+            // Log the uvURL
+            console.log(uvURL);
+    
+            // Log the resulting object
+            console.log(response);
+
+            var lon = response.city.coord[1];
+            var lat = response.city.coord[0];
+            console.log(lon, lat);
+            
+            
+            })
+
+
+
+                                   
+                                
+                                
+                                
+                                }
+    $(".uv-index").text("UV Index: " + response)
+    getLongLat();
+
+
+        
+        
+            
+        
         
         // // Log the data in the console as well
         console.log("Temperature (F): " + tempF.toFixed(2));
@@ -90,8 +130,7 @@ function searchCity(city){
 // calling searchCity function with argument of "Hartford"
 searchCity("Hartford");
 
-// calling getHeaderDate function
-getHeaderDate();
+
 
 // in the form element on click of 'search'/'submit' event (e) prevent from refreshing the page; 
 // when page refreshes show default city Hartford
