@@ -16,7 +16,9 @@ h1 {
     
 }
 
-
+.stats {
+    transform: scale(1) translate(0px, 0px);
+}
 
 /* main forecast box with info */
 #main-forecast {
@@ -34,6 +36,7 @@ h1 {
     margin-top: 0px;
     width: 120%;
     line-height: 40px;
+    transform: scale() translate (100px, 90px);
 }
 
 /* Search for City text */
@@ -77,7 +80,7 @@ h4 {
     margin-left: 285px;
     margin-top: 0px;
     margin-bottom: 50px;
-    transform: translate(0px, -140px);
+    transform: translate(-2px, -40px);
     
     
 
@@ -87,7 +90,7 @@ h4 {
 #forecast {
     display: flexbox;
     height: 15rem;
-    width: 12rem;
+    width: 10rem;
     background-color: rgba(8, 76, 247, 0.892);
     transform: translate(15px, 0px);
     color: white;
@@ -95,10 +98,22 @@ h4 {
     
 }
 
+img {
+    height: 100px;
+    margin-left: 16px;
+}
+
 #temp1 {
-    padding-top: 60px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+#humidity1 {
+    font-size: 18px;
 }
 /* color coordination based on uv-index */
+
+
 
 .low-uv  {
     font-size: 15px;
@@ -129,3 +144,21 @@ h4 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 2;
 }
+
+/* weather icons */ 
+
+/* .fa-snowflake {
+    size: 5rem;
+}
+.fa-sun {
+    size: 5rem;
+}
+
+.fa-cloud {
+
+}
+
+.fa-cloud-showers-heavy {
+
+} */
+
