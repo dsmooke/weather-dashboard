@@ -12,6 +12,7 @@ h1 {
     text-align: center;
     background-color: black;
     color: white;
+    margin-bottom: 0px;
     
 }
 
@@ -19,15 +20,21 @@ h1 {
 
 /* main forecast box with info */
 #main-forecast {
-    background-color: rgb(221, 108, 16);
-    border: solid;
-    border-color: rgb(181, 181, 181);
+    display: flex-wrap;
+    background-color: white;
+    border-top: solid;
+    border-left: solid;
+    border-bottom: solid;
+    border-color: rgba(181, 181, 181, 0.363);
     border-radius: 5px;
-    position: relative;
+    position: absolute;
     padding: 15px;
-    margin: 20px;
+    margin: 50px;
+    margin-top: 0px;
+    width: 755px;
     line-height: 40px;
 }
+
 /* Search for City text */
 h4 {
     padding-left:5px;
@@ -35,6 +42,7 @@ h4 {
     color:black;
     
 }
+/* main container */
 .container-flex {
     width:120%;
     padding: 30px;
@@ -44,7 +52,7 @@ h4 {
 }
 
 #saved-cities {
-    padding-top: 10px;
+    padding-top: 15px;
     width: 120%;
 }
 
