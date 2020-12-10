@@ -6,7 +6,7 @@ console.log(time);
 
 
 var currentHeaderDate = moment().format("l");
-
+// var fiveDayOutlook = 
 
 // Our API key
 var APIKey = "f6f7a3dff7fc0e302488452daa7283c8"
@@ -113,6 +113,18 @@ function searchCity(city){
             item => {
                 if(item.dt_txt.includes("12:00")) {
                     console.log(item.dt_txt);
+
+                    // 1 Day in Future
+                    var fiveDays = item.dt_txt
+                    fiveDays = moment().format("l");
+                    console.log("YES" + fiveDays)
+                    $("#nextDay").html("<h5>" + fiveDays + "</h5>");
+                                
+                    // 2 Days in Future
+
+                            
+                        
+                    
                 }
             }
         )
@@ -155,15 +167,8 @@ function searchCity(city){
         } // end of geWeatherIcon function
        getWeatherIcon();
 
-
-
-
-
-
-
      })
         
-    
         
 } 
 // calling searchCity function with argument of "Hartford"
@@ -178,41 +183,16 @@ $("form").on("submit", (e) => {
     searchCity(inputOne);
 })
 
+// function getFiveDayOutlook() {
+//     var fiveDayOutlook = response.item.dt_txt.includes("12:00");
+//     console.log(fiveDayOutlook);
+// }
+// // getFiveDayOutlook();
 
 
+// response.list.forEach(
+//     item => {
+//         if(item.dt_txt.includes("12:00")) {
+//             var fiveDays = item.dt_txt
+//             console.log(item.dt_txt);
 
-    // weather array object [{
-        // id: "main": "Rain",
-        // "description": "light rain",
-        // "icon": "10n" 
-        // }]
-
-//     var weatherIcon = response.list[0].weather[0].icon;
-
-//     iconURL = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
-
-// //    console.log(weatherIcon);
-//     console.log(iconURL);
-
-//         // Here we run our AJAX call to the OpenWeatherMap API
-//     $.ajax({
-//         url: iconURL,
-//         method: "GET"
-//     })
-
-//     // We store all of the retrieved data inside of an object called "response"
-//     .then(function(response) {
-
-//         // Log the queryURL
-//         console.log(iconURL);
-
-//         // Log the resulting object
-//         console.log(response);
-
-            
-
-//         // Transfer content to HTML aka display function
-//         $(".city").html("<span>" + response.list[0].weather.icon + "</span>");
-            
-//          })
-   
