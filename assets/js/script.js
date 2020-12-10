@@ -62,7 +62,7 @@ function searchCity(city){
         var lat = response.city.coord.lat;
             console.log(lat, lon);
         
-
+        // function to get UV-Index
         function uvIndex() {
        
             uvURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKey}`
@@ -141,22 +141,38 @@ function searchCity(city){
                 console.log("It's sunny.")
                 $("#wIcon1").html("<img src='./assets/imgs/sun.png'>")
                 $(".weatherIcon").html("<img src='./assets/imgs/sun.png'>")
+                $("#wIcon2").html("<img src='./assets/imgs/sun.png'>")
+                $("#wIcon3").html("<img src='./assets/imgs/sun.png'>")
+                $("#wIcon4").html("<img src='./assets/imgs/sun.png'>")
+                $("#wIcon5").html("<img src='./assets/imgs/sun.png'>")
 
             } else if (response.list[0].weather[0].id == rain ) {
                 console.log("It's rainy.")
                 $("#wIcon1").html("<img src='./assets/imgs/rain.png'>")
                 $("#weatherIcon").html("<img src='./assets/imgs/rain.png'>")
+                $("#wIcon2").html("<img src='./assets/imgs/rain.png'>")
+                $("#wIcon3").html("<img src='./assets/imgs/rain.png'>")
+                $("#wIcon4").html("<img src='./assets/imgs/rain.png'>")
+                $("#wIcon5").html("<img src='./assets/imgs/rain.png'>")
 
             } else if (response.list[0].clouds.all == clouds || response.list[0].clouds.all <= 100) {
                 console.log("It's cloudy.")
                 $("#wIcon1").html("<img src='./assets/imgs/clouds.png'>")
                 $(".weatherIcon").html("<img src='./assets/imgs/clouds.png'>")
+                $("#wIcon2").html("<img src='./assets/imgs/clouds.png'>")
+                $("#wIcon3").html("<img src='./assets/imgs/clouds.png'>")
+                $("#wIcon4").html("<img src='./assets/imgs/clouds.png'>")
+                $("#wIcon5").html("<img src='./assets/imgs/clouds.png'>")
 
             } else if (response.list[0].weather[0].main == snow ) {
                 console.log("It's snowing.")
                 $("#wIcon1").html("<img src='./assets/imgs/snow.png'>")
-                $("#wIcon1").html("<img src='./assets/imgs/snow.png'>")
-             }
+                $(".weatherIcon").html("<img src='./assets/imgs/snow.png'>")
+                $("#wIcon2").html("<img src='./assets/imgs/snow.png'>")
+                $("#wIcon3").html("<img src='./assets/imgs/snow.png'>")
+                $("#wIcon4").html("<img src='./assets/imgs/snow.png'>")
+                $("#wIcon5").html("<img src='./assets/imgs/snow.png'>")
+            }
 
             
             
