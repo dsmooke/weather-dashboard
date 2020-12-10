@@ -63,50 +63,44 @@ function searchCity(city){
             console.log(lat, lon);
         
 
-    function uvIndex(city) {
+        function uvIndex() {
        
-        uvURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKey}`
+            uvURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKey}`
 
-         console.log("uv-index API " + uvURL);
+            console.log("uv-index API " + uvURL);
 
-         $.ajax({
-            url: uvURL,
-            method: "GET"
-        })
+            $.ajax({
+                url: uvURL,
+                method: "GET"
+            })
             .then(function(response) {
 
-            // Log the uvURL
-            console.log(uvURL);
-    
-            // Log the resulting object
-            console.log(response.value);
+                // Log the uvURL
+                console.log(uvURL);
+        
+                // Log the resulting object
+                console.log(response.value);
             
 
-            $(".uv-index").text("UV Index: " +  response.value)
+                $(".uv-index").text("UV Index: " +  response.value)
             
-            var uv = response.value;
-            console.log(uv);
+                var uv = response.value;
+                console.log(uv);
 
-            // color coordinating based on index
-            if (uv <= 2) {
-                $(".uv-index").html("UV Index: " + "<span class='badge low-uv'>" +  + uv + "</span>") 
-                
-            } else if (uv <= 7){
-                $(".uv-index").html("UV Index: " + "<span class='badge high-uv'>" +  + uv + "</span>")
-            } else {$(".uv-index").html("UV Index: " + "<span class='badge bad-uv'>" +  + uv + "</span>")
-            }
-            
+                // color coordinating based on index
+                if (uv <= 2) {
+                    $(".uv-index").html("UV Index: " + "<span class='badge low-uv'>" +  + uv + "</span>") 
+
+                } else if (uv <= 7){
+                    $(".uv-index").html("UV Index: " + "<span class='badge high-uv'>" +  + uv + "</span>")
+
+                } else { $(".uv-index").html("UV Index: " + "<span class='badge bad-uv'>" +  + uv + "</span>")
+                }
             })
-                
         }
     
-    uvIndex();
-
-
-        
-        
-            
-        
+        // call function
+        uvIndex();
         
         // // Log the data in the console as well
         console.log("Temperature (F): " + tempF.toFixed(2));
@@ -114,35 +108,68 @@ function searchCity(city){
         console.log("Wind Speed: " + response.list[0].wind.speed);
         console.log("UV Index: " + response.value);
         
-
-        
         // within the response's(citySearch's) list, forEach item within list array, find item with a date text that includes 12pm, if found log to console.
         response.list.forEach(
             item => {
                 if(item.dt_txt.includes("12:00")) {
                     console.log(item.dt_txt);
                 }
-                
-            
-                    } 
-                )
-
-
-            } 
+            }
         )
+        
+        function getWeatherIcon(){
+
+            var snow = ["light snow", "snow", "heavy snow", "sleet", "light shower sleet", "shower sleet", "light rain and snow", "rain and snow", "light shower snow", "shower snow", "heavy shower snow"];
+
+            var sun = ["clear", "sunny"];
+            var rain = [500, 501, 502, 503, 504, 511, 520, 521, 522, 531]
+            var clouds = [801, 802, 803, 804]
+
+            if (response.list[0].weather[0].main == "Sun" || "Clear") {
+                console.log("It's sunny.")
+                $("#wIcon1").html("<img src='./assets/imgs/sun.png'>")
+                $(".weatherIcon").html("<img src='./assets/imgs/sun.png'>")
+
+            } else if (response.list[0].weather[0].id == rain ) {
+                console.log("It's rainy.")
+                $("#wIcon1").html("<img src='./assets/imgs/rain.png'>")
+                $("#weatherIcon").html("<img src='./assets/imgs/rain.png'>")
+
+            } else if (response.list[0].clouds.all == clouds || response.list[0].clouds.all <= 100) {
+                console.log("It's cloudy.")
+                $("#wIcon1").html("<img src='./assets/imgs/clouds.png'>")
+                $(".weatherIcon").html("<img src='./assets/imgs/clouds.png'>")
+
+            } else if (response.list[0].weather[0].main == snow ) {
+                console.log("It's snowing.")
+                $("#wIcon1").html("<img src='./assets/imgs/snow.png'>")
+                $("#wIcon1").html("<img src='./assets/imgs/snow.png'>")
+             }
+
+            
+            
+            
+
+        
+        
+        } // end of geWeatherIcon function
+       getWeatherIcon();
+
+
+
+
+
+
+
+     })
+        
     
         
-    }
-
-    
-
-
+} 
 // calling searchCity function with argument of "Hartford"
 searchCity("Hartford");
 
 
-
-// in the form element on click of 'search'/'submit' event (e) prevent from refreshing the page; 
 // when page refreshes show default city Hartford
 $("form").on("submit", (e) => {
     e.preventDefault();
@@ -152,8 +179,14 @@ $("form").on("submit", (e) => {
 })
 
 
-// function getWeatherIcon(){
-    
+
+
+    // weather array object [{
+        // id: "main": "Rain",
+        // "description": "light rain",
+        // "icon": "10n" 
+        // }]
+
 //     var weatherIcon = response.list[0].weather[0].icon;
 
 //     iconURL = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
@@ -182,5 +215,4 @@ $("form").on("submit", (e) => {
 //         $(".city").html("<span>" + response.list[0].weather.icon + "</span>");
             
 //          })
-
-//    } 
+   
