@@ -89,15 +89,15 @@ function searchCity(city){
 
             // color coordinating based on index
             if (uv <= 2) {
-                $(".uv-index").html("UV Index: " + "<span class='badge-success'>" +  + uv + "</span>") 
+                $(".uv-index").html("UV Index: " + "<span class='badge low-uv'>" +  + uv + "</span>") 
                 
             } else if (uv <= 7){
-                $(".uv-index").attr("class", "high-uv") 
-            } else {$(".uv-index").attr("class", "bad-uv") 
+                $(".uv-index").html("UV Index: " + "<span class='badge high-uv'>" +  + uv + "</span>")
+            } else {$(".uv-index").html("UV Index: " + "<span class='badge bad-uv'>" +  + uv + "</span>")
             }
             
             })
-                // uvIndex = response;
+                
         }
     
     uvIndex();
@@ -115,8 +115,7 @@ function searchCity(city){
         console.log("UV Index: " + response.value);
         
 
-        // response.city.list[array of objects with dt date code]
-
+        
         // within the response's(citySearch's) list, forEach item within list array, find item with a date text that includes 12pm, if found log to console.
         response.list.forEach(
             item => {
@@ -134,7 +133,7 @@ function searchCity(city){
     
         
     }
-// $(".city").html("<div>" + response.name + " </div>");
+
     
 
 
