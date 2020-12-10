@@ -20,7 +20,7 @@ h1 {
 
 /* main forecast box with info */
 #main-forecast {
-    display: flex-wrap;
+    display: flexbox;
     background-color: white;
     border-top: solid;
     border-left: solid;
@@ -54,17 +54,50 @@ h4 {
     
 }
 
+/* saved searched cities */
 #saved-cities {
     padding-top: 15px;
     width: 120%;
     padding-bottom: 20px;
 }
 
+/* .col-lg-9 {
+    position: relative;
+    display: flexbox;
+    flex: ;
+} */
 
+#fiveDayForecast {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:20%;
+    background-color: rgba(255, 0, 0, 0.358);
+    margin-left: 285px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    transform: translate(0px, -140px);
+    
+    
 
+}
 
+/* 5-day forecast single boxes */ 
+#forecast {
+    display: flexbox;
+    height: 15rem;
+    width: 12rem;
+    background-color: rgba(8, 76, 247, 0.892);
+    transform: translate(15px, 0px);
+    color: white;
+    border-radius: 10px;
+    
+}
 
-
+#temp1 {
+    padding-top: 60px;
+}
 /* color coordination based on uv-index */
 
 .low-uv  {
