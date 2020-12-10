@@ -90,7 +90,7 @@ h4 {
 #forecast {
     display: flexbox;
     height: 15rem;
-    width: 10rem;
+    width: 8rem;
     background-color: rgba(8, 76, 247, 0.892);
     transform: translate(15px, 0px);
     color: white;
@@ -98,9 +98,54 @@ h4 {
     
 }
 
+#day2 {
+    display: flexbox;
+    height: 15rem;
+    width: 8rem !important;
+    background-color: rgba(8, 76, 247, 0.892);
+    transform: translate(130px, -228px)!important;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+#day3 {
+    display: flexbox;
+    height: 15rem;
+    width: 8rem !important;
+    background-color: rgba(8, 76, 247, 0.892);
+    transform: translate(260px, -468px) !important;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+#day4 {
+    display: flexbox;
+    height: 15rem;
+    width: 8rem !important;
+    background-color: rgba(8, 76, 247, 0.892);
+    transform: translate(390px, -708px)!important;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+#day5 {
+    display: flexbox;
+    height: 15rem;
+    width: 8rem !important;
+    background-color: rgba(8, 76, 247, 0.892);
+    transform: translate(520px, -948px)!important;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* weather icon */
 img {
     height: 100px;
-    margin-left: 16px;
+    margin-left: 2px;
 }
 
 #temp1 {
@@ -111,10 +156,10 @@ img {
 #humidity1 {
     font-size: 18px;
 }
+
+
+
 /* color coordination based on uv-index */
-
-
-
 .low-uv  {
     font-size: 15px;
     width: 45px;
