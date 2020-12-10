@@ -20,7 +20,7 @@
 </head>
 <body>
   <h1>Weather Dashboard</h1>
-    <div class="container-flex">
+    <div class="container-flex ">
         
     <!--Search for a City Box-->
         <section class="row">
@@ -42,16 +42,40 @@
           <li class="list-group-item">Miami</li>
         </ul>
     
-            </section>
-        </section>
+            </section> <!--end of col-lg-3 search for city box-->
+        </section> <!--end of section row search for city box-->
        
 
 
 
 
 
-        <!-- Main City Forecast Display
-        <div class="row card flex-wrap" id="main-forecast">
+        <!-- Main City Forecast Display -->
+        <section class="col-lg-9 ">
+            <section class="flex-row ">
+                <div class="col" id="main-forecast">
+                    <div class="city"></div>
+                    <div id="currentDay"></div>
+                    <div class="temp"></div>
+                    <div class="tempF"></div>
+                    <div class="humidity"></div>
+                    <div class="wind"></div>
+                    <div class="uv-index"></div>
+               </div> 
+            </section>
+        </section>
+
+<!--5 day forecast-->
+        <section class="row">
+            <section class="col-sm border m-1 p-1 border-dark rounded" id="d1">
+                <h5 id="nextDay">(00/00/2020)</h5>
+                <p><img id="wIcon1" src="" alt="Weather icon"></p>
+                <p id="temp1">Temperature</p>
+                <p id="hum1">Humidity</p>
+            </section>
+
+
+        <!-- <div class="row card flex-wrap" id="main-forecast">
             <div class="col-2"></div>
             <div class="city"></div>
             <div id="currentDay"></div>
@@ -60,7 +84,7 @@
             <div class="humidity"></div>
             <div class="wind"></div>
             <div class="uv-index"></div>
-        </div>  -->
+        </div> -->
 
     
 
