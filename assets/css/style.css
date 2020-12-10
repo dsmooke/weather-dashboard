@@ -8,19 +8,15 @@
 /* Weather Dashboard banner */
 h1 {
     position: relative;
-    padding: 50px;
+    padding: 30px;
     text-align: center;
     background-color: black;
     color: white;
     
 }
-/* Search for City text */
-h4 {
-    padding-left:30px;
-    font-size:18px;
-    color: red;
-    
-}
+
+
+
 /* main forecast box with info */
 #main-forecast {
     background-color: rgb(221, 108, 16);
@@ -30,12 +26,33 @@ h4 {
     position: relative;
     padding: 15px;
     margin: 20px;
-    line-height: 40px;;
+    line-height: 40px;
+}
+/* Search for City text */
+h4 {
+    padding-left:5px;
+    font-size:18px;
+    color:black;
     
-
+}
+.container-flex {
+    width:120%;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: rgba(99, 96, 96, 0.077);
 }
 
-   
+#saved-cities {
+    padding-top: 10px;
+    width: 120%;
+}
+
+
+
+
+
+
 /* color coordination based on uv-index */
 
 .low-uv  {
