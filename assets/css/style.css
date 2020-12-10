@@ -27,11 +27,12 @@ h1 {
     border-bottom: solid;
     border-color: rgba(181, 181, 181, 0.363);
     border-radius: 5px;
-    position: absolute;
-    padding: 15px;
+    position: relative;
+    padding: 20px;
     margin: 50px;
+    margin-left: 60px;
     margin-top: 0px;
-    width: 755px;
+    width: 120%;
     line-height: 40px;
 }
 
@@ -44,16 +45,19 @@ h4 {
 }
 /* main container */
 .container-flex {
-    width:120%;
+    position: relative;
+    width:320%;
     padding: 30px;
     padding-top: 10px;
     padding-bottom: 30px;
     background-color: rgba(99, 96, 96, 0.077);
+    
 }
 
 #saved-cities {
     padding-top: 15px;
     width: 120%;
+    padding-bottom: 20px;
 }
 
 
