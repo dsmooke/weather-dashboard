@@ -23,8 +23,8 @@
     <div class="container-flex ">
         
     <!--Search for a City Box-->
-        <section class="row">
-            <section clss="col-lg-3 mt-4">
+    <section class="row">
+        <section clss="col-lg-3 mt-4">
                 <h4 class="searchBox">Search for a City:</h4>
                 <form class="form-inline">
                     <div class="form-group">
@@ -42,70 +42,45 @@
           <li class="list-group-item">Miami</li>
         </ul>
     
-            </section> <!--end of col-lg-3 search for city box-->
+        </section> <!--end of col-lg-3 search for city box-->
         
-       
-
-
-
-
-
-        <!-- Main City Forecast Display -->
+            <!-- Main City Forecast Display -->
         <section class="col-lg-9 ">
             <section class="row ">
                 <div class="col-lg-3" id="main-forecast">
+                    <div class="stats">
                     <div class="city"></div>
-                    <div id="currentDay"></div>
+                    <div class="weatherIcon" id="currentDay"></div>
                     <div class="temp"></div>
                     <div class="tempF"></div>
                     <div class="humidity"></div>
                     <div class="wind"></div>
                     <div class="uv-index"></div>
+                </div>
                </div> 
             </section>
         </section>
-</section> <!--end of section row search for city box-->
+    </section> <!--end of <section class="row"> search for city box-->
 
-<!--5 day forecast-->
-        <section class="row">
-            <section class="col-sm border m-1 p-1 border-dark rounded" id="d1">
-                <h5 id="nextDay">(00/00/2020)</h5>
-                <p><img id="wIcon1" src="" alt="Weather icon"></p>
-                <p id="temp1">Temperature</p>
-                <p id="hum1">Humidity</p>
-            </section>
+    <!--5 day forecast-->
+    <section class="row" id="fiveDayForecast">
+        <h3>5-Day Forecast:</h3>
+            <section class="row" id="forecast">
+                <section class="col-sm m-2 p-1  " id="day1">
+                    <h5 id="nextDay">(00/00/2020)</h5>
+                    <p id="wIcon1" alt="Weather icon"></p>
+                    <p id="temp1">Temp:</p>
+                    <p id="humidity1">Humidity:</p>
+                </section>
+            </section> <!--end #forecast-->
 
+    </section> <!--end of #fiveDayForecast-->
 
-        <!-- <div class="row card flex-wrap" id="main-forecast">
-            <div class="col-2"></div>
-            <div class="city"></div>
-            <div id="currentDay"></div>
-            <div class="temp"></div>
-            <div class="tempF"></div>
-            <div class="humidity"></div>
-            <div class="wind"></div>
-            <div class="uv-index"></div>
-        </div> -->
+ 
+    <!-- <img id="wIcon1" alt="Weather icon" -->
+   
 
-    
-
-
-
-    <!-- <div class="row d-flex flex-wrap justify-content" id="city-list">
-      
-          <h4>Search for a City:</h4>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" >
-            
-          <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-        </form>
-         -->
-
-       
-  
-    </div> <!--end of row class-->
-
-</div> <!--end of container-->
+    </div> <!--end of container-->
 
 
 
