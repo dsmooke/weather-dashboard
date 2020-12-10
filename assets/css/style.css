@@ -75,8 +75,8 @@ h4 {
     position: relative;
     flex-direction: column;
     flex-wrap: wrap;
-    width:20%;
-    background-color: rgba(255, 0, 0, 0.358);
+    width:18.8%;
+    /* background-color: rgba(255, 0, 0, 0.358); */
     margin-left: 285px;
     margin-top: 0px;
     margin-bottom: 50px;
@@ -101,45 +101,50 @@ h4 {
 #day2 {
     display: flexbox;
     height: 15rem;
-    width: 8rem !important;
+    width: 10rem !important;
     background-color: rgba(8, 76, 247, 0.892);
-    transform: translate(130px, -228px)!important;
+    transform: translate(125px, -228px)!important;
     color: white;
     border-radius: 10px;
     position: relative;
+    margin-left: 10px
 }
+
 
 #day3 {
     display: flexbox;
     height: 15rem;
-    width: 8rem !important;
+    width: 10rem !important;
     background-color: rgba(8, 76, 247, 0.892);
-    transform: translate(260px, -468px) !important;
+    transform: translate(261px, -468px) !important;
     color: white;
     border-radius: 10px;
     position: relative;
+    margin-left: 10px
 }
 
 #day4 {
     display: flexbox;
     height: 15rem;
-    width: 8rem !important;
+    width: 10rem !important;
     background-color: rgba(8, 76, 247, 0.892);
-    transform: translate(390px, -708px)!important;
+    transform: translate(396px, -708px)!important;
     color: white;
     border-radius: 10px;
     position: relative;
+    margin-left: 10px
 }
 
 #day5 {
     display: flexbox;
     height: 15rem;
-    width: 8rem !important;
+    width: 10rem !important;
     background-color: rgba(8, 76, 247, 0.892);
-    transform: translate(520px, -948px)!important;
+    transform: translate(532px, -948px)!important;
     color: white;
     border-radius: 10px;
     position: relative;
+    margin-left: 10px
 }
 
 /* weather icon */
@@ -148,17 +153,74 @@ img {
     margin-left: 2px;
 }
 
-#temp1 {
+#temp1  {
     font-size: 18px;
     padding-bottom: 10px;
     margin-bottom: 0px;
 }
+
 #humidity1 {
     font-size: 18px;
 }
 
+#wIcon2 {
+    transform: translate(0px, 12px) !important;
+    margin-bottom: -30;
+    margin-left: -2px;
+}
+
+#temp2  {
+    font-size: 18px;
+    padding-bottom: 10px;
+    transform: translate(0px, 12px)!important;
+}
+#humidity2 {
+    font-size: 18px;
+    transform: translate(0px, -2px)!important;
+}
+
+#wIcon3 {
+    transform: translate(-1px, 12px) !important;
+}
+
+#temp3  {
+    font-size: 18px;
+    padding-bottom: 10px;
+    transform: translate(0px, 12px)!important;
+}
+#humidity3 {
+    font-size: 18px;
+    transform: translate(0px, -2px)!important;
+}
 
 
+#wIcon4 {
+    transform: translate(-4px, 12px) !important;
+}
+
+#temp4  {
+    font-size: 18px;
+    padding-bottom: 10px;
+    transform: translate(0px, 12px)!important;
+}
+#humidity4 {
+    font-size: 18px;
+    transform: translate(0px, -2px)!important;
+}
+
+#wIcon5 {
+    transform: translate(-4px, 12px) !important;
+}
+
+#temp5  {
+    font-size: 18px;
+    padding-bottom: 10px;
+    transform: translate(0px, 12px)!important;
+}
+#humidity5 {
+    font-size: 18px;
+    transform: translate(0px, -2px)!important;
+}
 /* color coordination based on uv-index */
 .low-uv  {
     font-size: 15px;
