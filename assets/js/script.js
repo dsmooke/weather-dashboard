@@ -114,11 +114,15 @@ function searchCity(city){
                 if(item.dt_txt.includes("12:00")) {
                     console.log(item.dt_txt);
 
+                    
+                    // var temp1 = response.list[4].main.temp.toFixed(2)
+                    // var humid1 = response.list[4].main.humidity
+
                     // 1 Day in Future
-                    var fiveDays = item.dt_txt
-                    fiveDays = moment().format("l");
-                    console.log("YES" + fiveDays)
-                    $("#nextDay").html("<h5>" + fiveDays + "</h5>");
+                    var date1 = item.dt_txt
+                    date1 = html(moment().add(1, 'days').format("l"));
+                    console.log(date1)
+                    $("#date1").text(date1);
                                 
                     // 2 Days in Future
 
