@@ -222,7 +222,7 @@ function searchCity(city){
                     var humid4 = (response.list[28].main.humidity);
                     $("#date4").html(date4);
                     $("#temp4").html(`Temp: ${temp4.toFixed(2)} F`);
-                    $("#humidity2").html(`Humidity: ${humid4}%`);
+                    $("#humidity4").html(`Humidity: ${humid4}%`);
 
                     // 5 Days in Future
                     var date5 = response.list[36].dt_txt
@@ -234,19 +234,17 @@ function searchCity(city){
                     $("#humidity5").html(`Humidity: ${humid5}%`);
 
 
-                    $(`#{city}`).val(localStorage.getItem(city))
+                    $(`#${city}`).val(localStorage.getItem(city))
                         function searchHistory() {
                             $(".searchBtn").val(localStorage.getItem(city))
+                            $(".list-group").html("<li>" + city + "</li>").val(localStorage.getItem(city))
                         }
                     searchHistory();
                 }
             }
         )
         
-        
-
      })
-        
         
 } 
 // calling searchCity function with argument of "Hartford"
@@ -267,16 +265,5 @@ searchBtn.on("click", function(event) {
     console.log($(this).parent().attr("id"))
     localStorage.setItem($(this).parent().attr("id"), $(this).prev().val()); 
   })
-// function getFiveDayOutlook() {
-//     var fiveDayOutlook = response.item.dt_txt.includes("12:00");
-//     console.log(fiveDayOutlook);
-// }
-// // getFiveDayOutlook();
 
-
-// response.list.forEach(
-//     item => {
-//         if(item.dt_txt.includes("12:00")) {
-//             var fiveDays = item.dt_txt
-//             console.log(item.dt_txt);
 
