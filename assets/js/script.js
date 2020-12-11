@@ -2,9 +2,6 @@
 var time = moment();
 console.log(time);
 
-
-
-
 var currentHeaderDate = moment().format("l");
 // var fiveDayOutlook = 
 
@@ -114,21 +111,61 @@ function searchCity(city){
                 if(item.dt_txt.includes("12:00")) {
                     console.log(item.dt_txt);
 
-                    
-                    // var temp1 = response.list[4].main.temp.toFixed(2)
-                    // var humid1 = response.list[4].main.humidity
 
                     // 1 Day in Future
-                    var date1 = item.dt_txt
-                    date1 = html(moment().add(1, 'days').format("l"));
-                    console.log(date1)
-                    $("#date1").text(date1);
+                    var date1 = response.list[4].dt_txt
+                    date1 = (moment().add(1, 'days').format("l"));
+                    var temp1 = (response.list[4].main.temp - 273.15) * 1.80 + 32
+                    var humid1 = (response.list[4].main.humidity);
+                    var wIcon1 = (response.list[4].weather.main);
+
+                    $("#date1").html(date1);
+                    $("#temp1").html(`Temp: ${temp1.toFixed(2)} F`);
+                    $("#humidity1").html(`Humidity: ${humid1}%`);
+                    // $("#wIcon1").html(wIcon1);
                                 
                     // 2 Days in Future
+                    var date2 = response.list[12].dt_txt
+                    date2 = (moment().add(2, 'days').format("l"));
+                    var temp2 = (response.list[12].main.temp - 273.15) * 1.80 + 32
+                    var humid2 = (response.list[12].main.humidity);
+                    $("#date2").html(date2);
+                    $("#temp2").html(`Temp: ${temp2.toFixed(2)} F`);
+                    $("#humidity2").html(`Humidity: ${humid2}%`);
 
-                            
-                        
-                    
+                    // 3 Days in Future
+                     var date3 = response.list[20].dt_txt
+                     date3 = (moment().add(3, 'days').format("l"));
+                     var temp3 = (response.list[20].main.temp - 273.15) * 1.80 + 32
+                     var humid3 = (response.list[20].main.humidity);
+                     $("#date3").html(date3);
+                     $("#temp3").html(`Temp: ${temp3.toFixed(2)} F`);
+                     $("#humidity3").html(`Humidity: ${humid3}%`);
+
+                    // 4 Days in Future
+                    var date4 = response.list[28].dt_txt
+                    date4 = (moment().add(4, 'days').format("l"));
+                    var temp4 = (response.list[28].main.temp - 273.15) * 1.80 + 32
+                    var humid4 = (response.list[28].main.humidity);
+                    $("#date4").html(date4);
+                    $("#temp4").html(`Temp: ${temp4.toFixed(2)} F`);
+                    $("#humidity2").html(`Humidity: ${humid4}%`);
+
+                    // 5 Days in Future
+                    var date5 = response.list[36].dt_txt
+                    date5 = (moment().add(5, 'days').format("l"));
+                    var temp5 = (response.list[36].main.temp - 273.15) * 1.80 + 32
+                    var humid5 = (response.list[36].main.humidity);
+                    $("#date5").html(date5);
+                    $("#temp5").html(`Temp: ${temp5.toFixed(2)} F`);
+                    $("#humidity5").html(`Humidity: ${humid5}%`);
+
+
+                    $(`#{city}`).val(localStorage.getItem(city))
+                        function searchHistory() {
+                            $(".searchBtn").val(localStorage.getItem(city))
+                        }
+                    searchHistory();
                 }
             }
         )
@@ -203,6 +240,12 @@ $("form").on("submit", (e) => {
     searchCity(inputOne);
 })
 
+var searchBtn = $(".searchBtn")
+searchBtn.on("click", function(event) {
+    console.log($(this).prev().val());
+    console.log($(this).parent().attr("id"))
+    localStorage.setItem($(this).parent().attr("id"), $(this).prev().val()); 
+  })
 // function getFiveDayOutlook() {
 //     var fiveDayOutlook = response.item.dt_txt.includes("12:00");
 //     console.log(fiveDayOutlook);
