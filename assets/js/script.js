@@ -41,6 +41,7 @@ function searchCity(city){
         // Transfer content to HTML aka display function and get today's date and display it
         $(".city").html("<h2>" + response.city.name + " (" + currentHeaderDate + ")" + "</h2>");
         
+        $(".weatherIcon").html("<img src='./assets/imgs/sun.png'>");
         $(".wind").text("Wind Speed: " + response.list[0].wind.speed + " MPH");
 
         $(".humidity").text("Humidity: " + response.list[0].main.humidity + " %");
@@ -122,8 +123,7 @@ function searchCity(city){
                     $("#date1").html(date1);
                     $("#temp1").html(`Temp: ${temp1.toFixed(2)} F`);
                     $("#humidity1").html(`Humidity: ${humid1}%`);
-                    // $("#wIcon1").html(wIcon1);
-                                
+                    $("#wIcon1").html("<img src='./assets/imgs/sun.png'>")
                     // 2 Days in Future
                     var date2 = response.list[12].dt_txt
                     date2 = (moment().add(2, 'days').format("l"));
@@ -178,7 +178,7 @@ function searchCity(city){
             var rain = [500, 501, 502, 503, 504, 511, 520, 521, 522, 531]
             var clouds = [801, 802, 803, 804]
 
-            if (response.list[0].weather[0].main == "Sun" || "Clear") {
+            if (response.list[0].weather[0].main == sun || "Clear") {
                 console.log("It's sunny.")
                 $("#wIcon1").html("<img src='./assets/imgs/sun.png'>")
                 $(".weatherIcon").html("<img src='./assets/imgs/sun.png'>")
