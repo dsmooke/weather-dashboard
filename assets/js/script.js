@@ -2,6 +2,15 @@
 var time = moment();
 console.log(time);
 
+var snow = ["light snow", "snow", "heavy snow", "sleet", "light shower sleet", "shower sleet", "light rain and snow", "rain and snow", "light shower snow", "shower snow", "heavy shower snow"];
+
+var sun = ["clear", "sunny"];
+var rain = [500, 501, 502, 503, 504, 511, 520, 521, 522, 531]
+var clouds = [801, 802, 803, 804]
+
+var weatherIcon = [sun + rain + clouds + snow];
+
+
 var currentHeaderDate = moment().format("l");
 // var fiveDayOutlook = 
 
@@ -42,6 +51,7 @@ function searchCity(city){
         $(".city").html("<h2>" + response.city.name + " (" + currentHeaderDate + ")" + "</h2>");
         
         $(".weatherIcon").html("<img src='./assets/imgs/sun.png'>");
+
         $(".wind").text("Wind Speed: " + response.list[0].wind.speed + " MPH");
 
         $(".humidity").text("Humidity: " + response.list[0].main.humidity + " %");
@@ -100,83 +110,13 @@ function searchCity(city){
         // call function
         uvIndex();
         
-        // // Log the data in the console as well
-        console.log("Temperature (F): " + tempF.toFixed(2));
-        console.log("Humidity: " + response.list[0].main.humidity);
-        console.log("Wind Speed: " + response.list[0].wind.speed);
-        console.log("UV Index: " + response.value);
-        
-        // within the response's(citySearch's) list, forEach item within list array, find item with a date text that includes 12pm, if found log to console.
-        response.list.forEach(
-            item => {
-                if(item.dt_txt.includes("12:00")) {
-                    console.log(item.dt_txt);
-
-
-                    // 1 Day in Future
-                    var date1 = response.list[4].dt_txt
-                    date1 = (moment().add(1, 'days').format("l"));
-                    var temp1 = (response.list[4].main.temp - 273.15) * 1.80 + 32
-                    var humid1 = (response.list[4].main.humidity);
-                    var wIcon1 = (response.list[4].weather.main);
-
-                    $("#date1").html(date1);
-                    $("#temp1").html(`Temp: ${temp1.toFixed(2)} F`);
-                    $("#humidity1").html(`Humidity: ${humid1}%`);
-                    $("#wIcon1").html("<img src='./assets/imgs/sun.png'>")
-                    // 2 Days in Future
-                    var date2 = response.list[12].dt_txt
-                    date2 = (moment().add(2, 'days').format("l"));
-                    var temp2 = (response.list[12].main.temp - 273.15) * 1.80 + 32
-                    var humid2 = (response.list[12].main.humidity);
-                    $("#date2").html(date2);
-                    $("#temp2").html(`Temp: ${temp2.toFixed(2)} F`);
-                    $("#humidity2").html(`Humidity: ${humid2}%`);
-
-                    // 3 Days in Future
-                     var date3 = response.list[20].dt_txt
-                     date3 = (moment().add(3, 'days').format("l"));
-                     var temp3 = (response.list[20].main.temp - 273.15) * 1.80 + 32
-                     var humid3 = (response.list[20].main.humidity);
-                     $("#date3").html(date3);
-                     $("#temp3").html(`Temp: ${temp3.toFixed(2)} F`);
-                     $("#humidity3").html(`Humidity: ${humid3}%`);
-
-                    // 4 Days in Future
-                    var date4 = response.list[28].dt_txt
-                    date4 = (moment().add(4, 'days').format("l"));
-                    var temp4 = (response.list[28].main.temp - 273.15) * 1.80 + 32
-                    var humid4 = (response.list[28].main.humidity);
-                    $("#date4").html(date4);
-                    $("#temp4").html(`Temp: ${temp4.toFixed(2)} F`);
-                    $("#humidity2").html(`Humidity: ${humid4}%`);
-
-                    // 5 Days in Future
-                    var date5 = response.list[36].dt_txt
-                    date5 = (moment().add(5, 'days').format("l"));
-                    var temp5 = (response.list[36].main.temp - 273.15) * 1.80 + 32
-                    var humid5 = (response.list[36].main.humidity);
-                    $("#date5").html(date5);
-                    $("#temp5").html(`Temp: ${temp5.toFixed(2)} F`);
-                    $("#humidity5").html(`Humidity: ${humid5}%`);
-
-
-                    $(`#{city}`).val(localStorage.getItem(city))
-                        function searchHistory() {
-                            $(".searchBtn").val(localStorage.getItem(city))
-                        }
-                    searchHistory();
-                }
-            }
-        )
-        
         function getWeatherIcon(){
 
-            var snow = ["light snow", "snow", "heavy snow", "sleet", "light shower sleet", "shower sleet", "light rain and snow", "rain and snow", "light shower snow", "shower snow", "heavy shower snow"];
+            // var snow = ["light snow", "snow", "heavy snow", "sleet", "light shower sleet", "shower sleet", "light rain and snow", "rain and snow", "light shower snow", "shower snow", "heavy shower snow"];
 
-            var sun = ["clear", "sunny"];
-            var rain = [500, 501, 502, 503, 504, 511, 520, 521, 522, 531]
-            var clouds = [801, 802, 803, 804]
+            // var sun = ["clear", "sunny"];
+            // var rain = [500, 501, 502, 503, 504, 511, 520, 521, 522, 531]
+            // var clouds = [801, 802, 803, 804]
 
             if (response.list[0].weather[0].main == sun || "Clear") {
                 console.log("It's sunny.")
@@ -223,6 +163,87 @@ function searchCity(city){
         
         } // end of geWeatherIcon function
        getWeatherIcon();
+
+
+
+
+
+
+
+
+
+        // // Log the data in the console as well
+        console.log("Temperature (F): " + tempF.toFixed(2));
+        console.log("Humidity: " + response.list[0].main.humidity);
+        console.log("Wind Speed: " + response.list[0].wind.speed);
+        console.log("UV Index: " + response.value);
+        
+        // within the response's(citySearch's) list, forEach item within list array, find item with a date text that includes 12pm, if found log to console.
+        response.list.forEach(
+            item => {
+                if(item.dt_txt.includes("12:00")) {
+                    console.log(item.dt_txt);
+
+
+                    // 1 Day in Future
+                    var date1 = response.list[4].dt_txt
+                    date1 = (moment().add(1, 'days').format("l"));
+                    var temp1 = (response.list[4].main.temp - 273.15) * 1.80 + 32
+                    var humid1 = (response.list[4].main.humidity);
+                    var wIcon1 = (response.list[4].weather.main);
+
+                    $("#date1").html(date1);
+                    $("#temp1").html(`Temp: ${temp1.toFixed(2)} F`);
+                    $("#humidity1").html(`Humidity: ${humid1}%`);
+                    // $("#wIcon1").html(`<img src='./assets/imgs/${weatherIcon}.png'>`)
+
+                    // 2 Days in Future
+                    var date2 = response.list[12].dt_txt
+                    date2 = (moment().add(2, 'days').format("l"));
+                    var temp2 = (response.list[12].main.temp - 273.15) * 1.80 + 32
+                    var humid2 = (response.list[12].main.humidity);
+                    $("#date2").html(date2);
+                    $("#temp2").html(`Temp: ${temp2.toFixed(2)} F`);
+                    $("#humidity2").html(`Humidity: ${humid2}%`);
+
+                    // 3 Days in Future
+                     var date3 = response.list[20].dt_txt
+                     date3 = (moment().add(3, 'days').format("l"));
+                     var temp3 = (response.list[20].main.temp - 273.15) * 1.80 + 32
+                     var humid3 = (response.list[20].main.humidity);
+                     $("#date3").html(date3);
+                     $("#temp3").html(`Temp: ${temp3.toFixed(2)} F`);
+                     $("#humidity3").html(`Humidity: ${humid3}%`);
+
+                    // 4 Days in Future
+                    var date4 = response.list[28].dt_txt
+                    date4 = (moment().add(4, 'days').format("l"));
+                    var temp4 = (response.list[28].main.temp - 273.15) * 1.80 + 32
+                    var humid4 = (response.list[28].main.humidity);
+                    $("#date4").html(date4);
+                    $("#temp4").html(`Temp: ${temp4.toFixed(2)} F`);
+                    $("#humidity2").html(`Humidity: ${humid4}%`);
+
+                    // 5 Days in Future
+                    var date5 = response.list[36].dt_txt
+                    date5 = (moment().add(5, 'days').format("l"));
+                    var temp5 = (response.list[36].main.temp - 273.15) * 1.80 + 32
+                    var humid5 = (response.list[36].main.humidity);
+                    $("#date5").html(date5);
+                    $("#temp5").html(`Temp: ${temp5.toFixed(2)} F`);
+                    $("#humidity5").html(`Humidity: ${humid5}%`);
+
+
+                    $(`#{city}`).val(localStorage.getItem(city))
+                        function searchHistory() {
+                            $(".searchBtn").val(localStorage.getItem(city))
+                        }
+                    searchHistory();
+                }
+            }
+        )
+        
+        
 
      })
         

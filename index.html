@@ -20,7 +20,7 @@
 </head>
 <body>
   <h1>Weather Dashboard</h1>
-    <div class="container-flex ">
+    <div class="container ">
         
     <!--Search for a City Box-->
     <section class="row">
@@ -28,7 +28,7 @@
                 <h4 class="searchBox">Search for a City:</h4>
                 <form class="form-inline">
                     <div class="form-group">
-                        <input type="search" class="form-control" id="userInput" placeholder="City Name"><button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                        <input type="search" class="form-control" id="userInput" placeholder="City Name"><button class="searchBtn btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form> 
    
@@ -47,7 +47,7 @@
             <!-- Main City Forecast Display -->
         <section class="col-lg-9 ">
             <section class="row ">
-                <div class="col-lg-3" id="main-forecast">
+                <div class="col-lg-10" id="main-forecast">
                     <div class="stats">
                     <div class="city"></div>
                     <div class="weatherIcon" id="currentDay"></div>
@@ -63,48 +63,48 @@
     </section> <!--end of <section class="row"> search for city box-->
 
     <!--5 day forecast-->
-    <section class="row" id="fiveDayForecast">
+    <section class="row  " id="fiveDayForecast">
         <h3>5-Day Forecast:</h3>
-            <section class="row" id="forecast">
-                <section class="col-sm m-2 p-1  " id="day1">
+            
+                <section class="col-sm " id="day1">
                     <h5 id="date1"></h5>
                     <p id="wIcon1" alt="Weather icon"></p>
-                    <p id="temp1">Temp:</p>
-                    <p id="humidity1">Humidity:</p>
+                    <p id="temp1"></p>
+                    <p id="humidity1"></p>
                 </section>
                 
            
            
                 <section class="col-sm" id="day2">
                     <h5 id="date2"></h5>
-                    <p id="wIcon1" alt="Weather icon"></p>
-                    <p id="temp1">Temp:</p>
-                    <p id="humidity1">Humidity:</p>
+                    <p id="wIcon2" alt="Weather icon"></p>
+                    <p id="temp2">Temp:</p>
+                    <p id="humidity2">Humidity:</p>
                 </section>
                 
             
             
                 <section class="col-sm" id="day3">
                     <h5 id="date3"></h5>
-                    <p id="wIcon1" alt="Weather icon"></p>
-                    <p id="temp1">Temp:</p>
-                    <p id="humidity1">Humidity:</p>
+                    <p id="wIcon3" alt="Weather icon"></p>
+                    <p id="temp3">Temp:</p>
+                    <p id="humidity3">Humidity:</p>
                 </section>
 
-                <section class="col-sm" id="day4">
+                <section class="col-sm " id="day4">
                     <h5 id="date4"></h5>
-                    <p id="wIcon1" alt="Weather icon"></p>
-                    <p id="temp1">Temp:</p>
-                    <p id="humidity1">Humidity:</p>
+                    <p id="wIcon4" alt="Weather icon"></p>
+                    <p id="temp4">Temp:</p>
+                    <p id="humidity4">Humidity:</p>
                 </section>
 
                 <section class="col-sm" id="day5">
                     <h5 id="date5"></h5>
-                    <p id="wIcon1" alt="Weather icon"></p>
-                    <p id="temp1">Temp:</p>
-                    <p id="humidity1">Humidity:</p>
+                    <p id="wIcon5" alt="Weather icon"></p>
+                    <p id="temp5">Temp:</p>
+                    <p id="humidity5">Humidity:</p>
                 </section>
-            </section> <!--end #forecast-->
+            <!-- </section> end #forecast -->
            
     </section> <!--end of #fiveDayForecast-->
 
