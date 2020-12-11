@@ -16,11 +16,6 @@ For this assignment we were asked to build a weather dashboard from scratch.
 - Use `localStorage` to store any persistent data.
 
 
-#### Definitions
-
-*Server-side APIs* :
-
-
 ## Instructions
 
 Our instructions for this assignment were based on the following user story and acceptance criteria:
@@ -53,13 +48,20 @@ THEN I am presented with the last searched city forecast
 
 ## Developer
 
-For my weather dashboard I focused on a simplified html format.Unlike the previous assignment, I have kept the html code clean so that the JavaScript code can populate it. 
+For my weather dashboard I focused on adding more html via JavaScript. I tried to keep simplified html format, but as I progressed, it was clear that I wasn't ready to take that leap just yet. Hopefully next time!
+
+P.S. Note to self: Always save changes and push commits before you walk away from your desk. You fixed it this time, but next time you may not be so lucky.
+
+[Weather Dashboard](https://dsmooke.github.io/weather-dashboard/)
+
+[GitHub Repo](https://github.com/dsmooke/weather-dashboard)
+
 
 ## Mock-Up
 
 The following image demonstrates the application functionality:
 
-![weather dashboard demo](./img..png)
+![weather dashboard demo](./assets/imgs/weather-final-demo.png)
 
 
 - - -

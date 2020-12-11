@@ -7,20 +7,15 @@ var snow = ["light snow", "snow", "heavy snow", "sleet", "light shower sleet", "
 var sun = ["clear", "sunny"];
 var rain = [500, 501, 502, 503, 504, 511, 520, 521, 522, 531]
 var clouds = [801, 802, 803, 804]
-
-var weatherIcon = [sun + rain + clouds + snow];
+// var weatherIcon = [sun + rain + clouds + snow];
 
 
 var currentHeaderDate = moment().format("l");
-// var fiveDayOutlook = 
+
 
 // Our API key
 var APIKey = "f6f7a3dff7fc0e302488452daa7283c8"
 var city = "";
-
-
-// "https://api.openweathermap.org/data/2.5/forecast?q=Hartford&appid=" + APIKey;
-
 
 // Function to Search for a City
 function searchCity(city){
@@ -45,8 +40,6 @@ function searchCity(city){
         // Log the resulting object
         console.log(response);
 
-        
-        
         // Transfer content to HTML aka display function and get today's date and display it
         $(".city").html("<h2>" + response.city.name + " (" + currentHeaderDate + ")" + "</h2>");
         
@@ -155,21 +148,8 @@ function searchCity(city){
                 $("#wIcon5").html("<img src='./assets/imgs/snow.png'>")
             }
 
-            
-            
-            
-
-        
-        
         } // end of geWeatherIcon function
        getWeatherIcon();
-
-
-
-
-
-
-
 
 
         // // Log the data in the console as well
@@ -182,8 +162,8 @@ function searchCity(city){
         response.list.forEach(
             item => {
                 if(item.dt_txt.includes("12:00")) {
+                    
                     console.log(item.dt_txt);
-
 
                     // 1 Day in Future
                     var date1 = response.list[4].dt_txt
@@ -234,10 +214,10 @@ function searchCity(city){
                     $("#humidity5").html(`Humidity: ${humid5}%`);
 
 
-                    $(`#${city}`).val(localStorage.getItem(city))
+                    // $(city).val(localStorage.getItem(city))
                         function searchHistory() {
                             $(".searchBtn").val(localStorage.getItem(city))
-                            $(".list-group").html("<li>" + city + "</li>").val(localStorage.getItem(city))
+                            $(".list-group").text(city).val(localStorage.getItem(city))
                         }
                     searchHistory();
                 }
