@@ -1,12 +1,22 @@
 
 # Weather Dashboard
 
+<span align="left">
+
+<a href="https://img.shields.io/badge/License-MIT-brightgreen?style=plastic"><img alt="M.I.T. License use" src="https://img.shields.io/badge/License-MIT-brightgreen?style=plastic"/></a>
+
+ </span>
+ 
 ## Description
-This is the sixth assignment from the UConn Coding Bootcamp curriculum which combines our working knowledge of the first five week's topics ((Git, Terminal, HTML, CSS, GitHub, GitHub Pages, GitLab, Web Accessibility, Bootstrap, JavaScript, Web APIs and jQuery, Third-Party APIs.) with the sixth week's topic: Server-Side APIs. 
+
+A weather dashboard application built from scratch that uses OpenWeather API. 
 
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. 
 
-For this assignment we were asked to build a weather dashboard from scratch. 
+
+## Technologies Used
+
+- Third-Party APIs
 
 ## Goals
 - Build a weather dashboard
@@ -63,6 +73,22 @@ The following image demonstrates the application functionality:
 
 ![weather dashboard demo](./assets/imgs/weather-final-demo.png)
 
+## Installation
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+1. Clone repo and install packages.
+
+## Contact
+
+[Dana Smooke]("https://github.com/dsmooke")
+
+** **Update: November 2020** Icons for weather do not change. Fix tbd. **
+
+## License
+
+[MIT]("https://opensource.org/licenses/MIT")
+
+---
+
+© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+
